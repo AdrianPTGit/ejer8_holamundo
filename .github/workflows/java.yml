@@ -1,0 +1,25 @@
+name: Compilar y ejecutar Java
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Compilar el programa
+        run: javac src/Main.java
+
+      - name: Ejecutar el programa
+        run: java -cp src Main
