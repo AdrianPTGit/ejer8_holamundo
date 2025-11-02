@@ -57,7 +57,7 @@ jobs:
 Guarda y sube todo a GitHub:
 
 ```bash
-git add .
+git add .github/workflows/java.yml
 git commit -m "Añadir GitHub Action para compilar y ejecutar Java"
 git push
 
